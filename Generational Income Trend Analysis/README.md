@@ -1,3 +1,5 @@
+# **Generational Income Trend Analysis**
+
 # Objective
 This project aimed to examine the interrelation of age and income among different generations, providing insights to aid policy formulation for varied age demographics. We sought to understand how factors such as age, education, and work hours contribute to income levels, with a focus on generational differences.
 Methodology
