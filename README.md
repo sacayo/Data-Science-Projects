@@ -29,7 +29,7 @@ Big data tools: Apache Spark, Google BigQuery
 # Projects
 (This section will be updated with brief descriptions of each project as they are added to the repository.)
 
-## Google Store Customer Return Prediction
+### Google Store Customer Return Prediction
 
   The primary goal of this project was to develop a machine learning model capable of predicting user retention for Google's online merchandise store. By accurately identifying potential returning customers, the model aims to   enhance the conversion rate of ad spend and optimize marketing efforts.
 
