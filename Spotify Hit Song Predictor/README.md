@@ -1,4 +1,8 @@
 # Spotify Hit Song Predictor
+
+# Collborators
+
+
 # Objective
 This project aimed to analyze Spotify track data to understand how musical characteristics influence a track's popularity and how popularity varies across different genres and subgenres over time. We sought to develop a model that could predict a song's potential for success based on its audio features and genre.
 Methodology
