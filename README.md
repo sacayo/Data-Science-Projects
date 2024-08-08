@@ -15,11 +15,11 @@ Any necessary data files or links to data sources
 Additional resources or documentation specific to the project
 
 # How to Navigate This Repository
-To explore a specific project:
-
-Click on the project directory.
-Read the project's individual README for a detailed overview.
-Examine the Jupyter notebooks or Python scripts to see the analysis in detail.
+  To explore a specific project:
+  
+  Click on the project directory
+  Read the project's individual README for a detailed overview
+  Examine the Jupyter notebooks or Python scripts to see the analysis in detail
 
 
 # Technologies Used
