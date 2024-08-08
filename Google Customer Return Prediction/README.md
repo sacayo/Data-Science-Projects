@@ -1,4 +1,4 @@
-# Overview
+## Overview
 This project develops a machine learning model to predict returning customers for Google's online merchandise store. Leveraging BigQuery to process 35GB of user behavior data across 13 months, we implemented an LSTM model that achieved a 93.72% recall rate, significantly outperforming the baseline logistic regression model. The project showcases advanced data processing techniques, feature engineering, and hyperparameter tuning to create a highly accurate predictive model with practical applications in customer retention and targeted marketing.
 
 
