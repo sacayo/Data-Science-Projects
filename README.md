@@ -40,7 +40,7 @@ The projects in this portfolio primarily use the following technologies:
 ##### [Google Store Customer Return Prediction](https://github.com/sacayo/Data-Science-Projects/tree/main/Generational-Income-Trend-Analysis)
 The primary goal of this project was to develop a machine learning model capable of predicting user retention for Google's online merchandise store. The final LSTM model achieved an 93.72% recall rate on the test set, significantly outperforming the baseline Logistic Regression model. 
 
-##### [YouTube Engagement A/B-test](https://github.com/sacayo/Data-Science-Projects/tree/main/YouTube-AB-Test)
+##### [YouTube Engagement A/B-Test](https://github.com/sacayo/Data-Science-Projects/tree/main/YouTube-AB-Test)
 This project investigates the causal impact of Bitcoin-related comments on YouTube video engagement through a randomized controlled trial. Utilizing YouTube's Data API for data collection and R for statistical analysis, we implemented a multi-level, between-subject experiment. Link to GitHub above.
 
 ##### [Refugee Network Analysis with NoSQL](https://github.com/sacayo/Data-Science-Projects/tree/main/Refugee-Network-Analysis-with-NoSQL)
