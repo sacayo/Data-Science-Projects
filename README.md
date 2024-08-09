@@ -28,10 +28,12 @@ The projects in this portfolio primarily use the following technologies:
 
 Python\
 Jupyter Notebooks Data analysis libraries: Pandas, NumPy\
-Database: SQL, NoSQL, Neo4j\
-Machine learning libraries: Scikit-learn, TensorFlow, Keras\
+Databases: SQL, NoSQL, Neo4j\
+Machine learning libraries: Scikit-learn, TensorFlow, Keras, PyTorch\
+Machine learning Algorithms: Classification, Regression, K-Means Clustering, NLP, Deep Learning\
 Data visualization: Matplotlib, Seaborn\
 Big data tools: AWS, Docker
+Developer tools: Jupyter, VSCode, Git, LinuxCLI
 
 ## Projects
 (This section will be updated with brief descriptions of each project as they are added to the repository.)
