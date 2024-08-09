@@ -26,12 +26,12 @@ Additional resources or documentation specific to the project
 ## Technologies Used
 The projects in this portfolio primarily use the following technologies:
 
-#### Python\
-#### Jupyter Notebooks Data analysis libraries: Pandas, NumPy\
-#### Database: SQL, NoSQL, Neo4j\
-#### Machine learning libraries: Scikit-learn, TensorFlow, Keras\
-#### Data visualization: Matplotlib, Seaborn\
-#### Big data tools: AWS, Docker
+Python\
+Jupyter Notebooks Data analysis libraries: Pandas, NumPy\
+Database: SQL, NoSQL, Neo4j\
+Machine learning libraries: Scikit-learn, TensorFlow, Keras\
+Data visualization: Matplotlib, Seaborn\
+Big data tools: AWS, Docker
 
 ## Projects
 (This section will be updated with brief descriptions of each project as they are added to the repository.)
