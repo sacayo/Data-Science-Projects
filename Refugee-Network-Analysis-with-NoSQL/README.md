@@ -1,8 +1,8 @@
 # Refugee Network Analysis using NoSQL
 
 ## Collaborator
-[Eric Ha](https://github.com/awesome-eric)
-[Chloe McGlynn](https://github.com/camcglynn)
+[Eric Ha](https://github.com/awesome-eric)\
+[Chloe McGlynn](https://github.com/camcglynn)\
 [Melody Lamphear]()
 
 ## Objective
