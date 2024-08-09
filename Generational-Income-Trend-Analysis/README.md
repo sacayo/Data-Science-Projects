@@ -31,7 +31,7 @@ Used Stargazer tables for clear presentation of results
 
 
 
-### Tools and Technologies:
+#### Tools and Technologies:
 
 R for statistical analysis and modeling
 Stargazer package for creating publication-quality regression tables
