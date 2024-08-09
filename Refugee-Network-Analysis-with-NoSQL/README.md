@@ -1,23 +1,28 @@
 # Refugee Network Analysis using NoSQL
 
-# Objective
+## Collaborator
+[Eric Ha](https://github.com/awesome-eric)
+[Chloe McGlynn](https://github.com/camcglynn)
+[Melody Lamphear]()
+
+## Objective
 This project aimed to analyze and visualize global refugee movements, focusing on the question: "Where are most refugees coming from/moving to, and how many were turned away from country of asylum during recent years (2020-2022)?" We sought to leverage NoSQL database technology to gain insights into refugee patterns and identify influential countries in the global refugee network.
 Methodology
 Our approach involved several key steps:
 
-# Data Integration:
+## Data Integration:
 
 Combined data from three major sources: UNHCR, UNRWA, and IDMC
 Utilized the R package {refugees} which includes 8 datasets
 
 
-# Data Processing and Exploration:
+## Data Processing and Exploration:
 
 Used SQL for initial data exploration and preprocessing
 Created query_combined tables with different options for analysis
 
 
-# Network Analysis with Neo4j:
+## Network Analysis with Neo4j:
 
 Constructed graph representations of refugee movements
 Countries represented as nodes, refugee flows as directed relationships
@@ -26,27 +31,27 @@ a. Inclusive of NULL return numbers
 b. Removed rows with no Returned numbers
 
 
-# Advanced Analytics:
+## Advanced Analytics:
 
 Applied PageRank and Personalized PageRank algorithms to identify influential nodes
 Utilized Louvain Modularity for community detection within the refugee network
 
 
-# Visualization:
+## Visualization:
 
 Created network visualizations using Neo4j
 Developed map-based visualizations using Google Maps API
 
 
 
-# Tools and Technologies:
+## Tools and Technologies:
 
-R for data processing and the {refugees} package
-SQL for data exploration
-Neo4j for graph database and network analysis
+R for data processing and the {refugees} package\
+SQL for data exploration\
+Neo4j for graph database and network analysis\
 Google Maps API for geographical visualizations
 
-# Results
+## Results
 Key findings from our analysis include:
 
 Dramatic increase in refugees due to war over 2020-2022, with Syria, Afghanistan, and Ukraine creating the most refugees
@@ -60,7 +65,7 @@ Exception: China's primary settlement country is the US
 
 Network analysis revealed key transit countries and refugee hubs
 
-# Significance/Impact
+## Significance/Impact
 This project provides valuable insights into global refugee movements and demonstrates the power of graph databases in analyzing complex social phenomena:
 
 ### Policy Implications: 
