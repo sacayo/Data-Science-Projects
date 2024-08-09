@@ -1,8 +1,8 @@
 # Spotify Hit Song Predictor
 
 # Collborators
-[Rachel Burgess](https://github.com/rayrayburrr)
-[Laura Lubben](https://github.com/lauralubben914)
+[Rachel Burgess](https://github.com/rayrayburrr)\
+[Laura Lubben](https://github.com/lauralubben914)\
 Byrce Loomis
 
 # Objective
