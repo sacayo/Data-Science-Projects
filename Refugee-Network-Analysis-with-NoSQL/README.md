@@ -11,19 +11,19 @@ This project aimed to analyze and visualize global refugee movements, focusing o
 ## Methodology
 Our approach involved several key steps:
 
-##### Data Integration:
+#### Data Integration:
 
 Combined data from three major sources: UNHCR, UNRWA, and IDMC
 Utilized the R package {refugees} which includes 8 datasets
 
 
-##### Data Processing and Exploration:
+#### Data Processing and Exploration:
 
 Used SQL for initial data exploration and preprocessing
 Created query_combined tables with different options for analysis
 
 
-##### Network Analysis with Neo4j:
+#### Network Analysis with Neo4j:
 
 Constructed graph representations of refugee movements
 Countries represented as nodes, refugee flows as directed relationships
@@ -32,13 +32,13 @@ a. Inclusive of NULL return numbers
 b. Removed rows with no Returned numbers
 
 
-##### Advanced Analytics:
+#### Advanced Analytics:
 
 Applied PageRank and Personalized PageRank algorithms to identify influential nodes
 Utilized Louvain Modularity for community detection within the refugee network
 
 
-##### Visualization:
+#### Visualization:
 
 Created network visualizations using Neo4j
 Developed map-based visualizations using Google Maps API
@@ -66,16 +66,16 @@ Exception: China's primary settlement country is the US
 
 Network analysis revealed key transit countries and refugee hubs
 
-## Significance/Impact
+#### Significance/Impact
 This project provides valuable insights into global refugee movements and demonstrates the power of graph databases in analyzing complex social phenomena:
 
-### Policy Implications: 
+#### Policy Implications: 
 The findings can inform international policy on refugee support and asylum processes.\
 Humanitarian Aid: Insights into refugee flows can help organizations better allocate resources and plan aid distribution.\
 Predictive Capabilities: The network analysis lays groundwork for predictive models of future refugee movements.\
 Technological Application: Demonstrates the effectiveness of NoSQL databases, particularly graph databases, in handling and analyzing complex, interconnected data.
 
-### Future Directions and Applications
+#### Future Directions and Applications
 The project opened up several avenues for future work and practical applications:
 
 Storing precomputed paths for refugee movement based on historical data\
