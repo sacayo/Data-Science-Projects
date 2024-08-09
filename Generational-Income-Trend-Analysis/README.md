@@ -1,10 +1,9 @@
 # Generational Income Trend Analysis
 ### Collaborators
+[Aston Cho](https://github.com/ashton-cho)\
+[Jeremy Ramirez](https://github.com/ramirezjc)
 
-[Jasmine Lau](https://github.com/AppleTater)
-[Diego Moss](https://github.com/Mossd-2)
-[Roz Huang](https://github.com/ronghuang0604)
-[Connor Huh](https://github.com/ConorHuh)
+
 
 # Objective
 This project aimed to examine the interrelation of age and income among different generations, providing insights to aid policy formulation for varied age demographics. We sought to understand how factors such as age, education, and work hours contribute to income levels, with a focus on generational differences.
