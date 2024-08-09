@@ -1,7 +1,15 @@
-# Objective
+# YouTube Video Engagement A/B-Test
+
+## Collaborators
+[Tracy Volz]()
+[Max Dietrich]()
+[Tony Gibbons]()
+[Ted Johnson]()
+
+## Objective
 The project aimed to determine whether YouTube videos experience increased engagement when comments discuss hot-button topics such as Bitcoin. We hypothesized that adding comments containing the word "Bitcoin" to YouTube videos would increase viewer engagement over a short period, potentially due to bot engagement, YouTube's algorithm, or a "shock" factor.
 
-# Methodology
+## Methodology
 We designed and executed a randomized controlled trial with a multi-level design:
 
 Data Collection: Utilized YouTube Data API to compile a list of videos.
@@ -21,7 +29,7 @@ We collected two datasets:
 Video engagement data (357 rows)
 Comment data (~157,000 rows)
 
-# Results
+## Results
 Initial analysis suggested significant effects on the difference in differences (DiD) of views and comments. However, after applying rigorous statistical methods including:
 
 Bonferroni correction for multiple comparisons
@@ -33,7 +41,7 @@ We found that the statistical significance of the effects diminished. Key findin
 No statistically significant effect detected on engagement metrics after corrections.
 Outliers had a substantial impact on results, highlighting the importance of thorough data distribution analysis in A/B testing.
 
-# Significance/Impact
+#### Significance/Impact
 This project demonstrates the complexity of conducting and analyzing A/B tests in real-world scenarios. It highlights the importance of:
 
 Rigorous experimental design in causal inference studies.
