@@ -1,10 +1,10 @@
 # Google Customer Return Prediciton
 
 ## Collaborators
-[Jasmine Lau](https://github.com/AppleTater)__
-[Diego Moss](https://github.com/Mossd-2)__
-[Roz Huang](https://github.com/ronghuang0604)__
-[Connor Huh](https://github.com/ConorHuh)__
+[Jasmine Lau](https://github.com/AppleTater)\
+[Diego Moss](https://github.com/Mossd-2)\
+[Roz Huang](https://github.com/ronghuang0604)\
+[Connor Huh](https://github.com/ConorHuh)\
 
 
 ## Overview
