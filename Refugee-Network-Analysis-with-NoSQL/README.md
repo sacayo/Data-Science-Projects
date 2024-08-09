@@ -3,7 +3,7 @@
 ## Collaborator
 [Eric Ha](https://github.com/awesome-eric)\
 [Chloe McGlynn](https://github.com/camcglynn)\
-[Melody Lamphear](melodymassis)
+[Melody Lamphear](https://github.com/melodymassis)
 
 ## Objective
 This project aimed to analyze and visualize global refugee movements, focusing on the question: "Where are most refugees coming from/moving to, and how many were turned away from country of asylum during recent years (2020-2022)?" We sought to leverage NoSQL database technology to gain insights into refugee patterns and identify influential countries in the global refugee network.
