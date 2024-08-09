@@ -18,19 +18,19 @@ Additional resources or documentation specific to the project
 ## How to Navigate This Repository
   To explore a specific project:
   
-  Click on the project directory
-  Read the project's individual README for a detailed overview
+  Click on the project directory\
+  Read the project's individual README for a detailed overview\
   Examine the Jupyter notebooks or Python scripts to see the analysis in detail
 
 
 ## Technologies Used
 The projects in this portfolio primarily use the following technologies:
 
-#### Python
-#### Jupyter Notebooks Data analysis libraries: Pandas, NumPy
-#### Database: SQL, NoSQL, Neo4j
-#### Machine learning libraries: Scikit-learn, TensorFlow, Keras
-#### Data visualization: Matplotlib, Seaborn
+#### Python\
+#### Jupyter Notebooks Data analysis libraries: Pandas, NumPy\
+#### Database: SQL, NoSQL, Neo4j\
+#### Machine learning libraries: Scikit-learn, TensorFlow, Keras\
+#### Data visualization: Matplotlib, Seaborn\
 #### Big data tools: AWS, Docker
 
 ## Projects
