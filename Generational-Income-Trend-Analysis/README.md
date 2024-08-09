@@ -58,10 +58,10 @@ Potential multicollinearity and non-linearity in the regression model\
 Observed heteroscedasticity and non-normal distribution of residuals\
 Possible omitted variable bias, not accounting for factors like industry or geography
 
-Future research could address these limitations by:\
+Future research could address these limitations by:
 
 Exploring non-linear modeling techniques\
 Incorporating additional relevant variables\
-Employing more advanced econometric methods to handle complex data structures\
+Employing more advanced econometric methods to handle complex data structures
 
 This project showcases the application of statistical analysis to real-world socio-economic questions, demonstrating the ability to derive meaningful insights from complex datasets while acknowledging the limitations of the chosen methodological approach.
