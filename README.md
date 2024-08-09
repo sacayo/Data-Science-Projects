@@ -1,6 +1,7 @@
 # Data Science Portfolio
 Welcome to my Data Science Portfolio repository! This collection showcases a variety of data science projects I've completed, demonstrating my skills in machine learning, data analysis, and problem-solving across different domains.
-Introduction
+
+### Introduction
 In this repository, you'll find a diverse range of data science projects that I've worked on. Each project demonstrates different aspects of the data science workflow, from data preprocessing and exploratory data analysis to model development and evaluation. These projects reflect my journey in applying data science techniques to real-world problems and datasets.
 
 # Repository Structure
