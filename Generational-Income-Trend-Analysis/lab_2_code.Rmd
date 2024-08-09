@@ -1,0 +1,351 @@
+---
+title: "LAB 2 Final Report"
+output:
+    pdf_document:
+      toc: true
+      number_sections: true
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*.
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(haven)
+library(stargazer)
+library(sandwich)
+library(lmtest)
+library(patchwork)
+library(car)
+
+theme_set(theme_minimal())
+options(tinytex.verbose = TRUE)
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning = FALSE)
+```
+
+```{r load data from r script provided by GSS extract, include = FALSE}
+library(foreign)
+  read.dct <- function(dct, labels.included = "yes") {
+      temp <- readLines(dct)
+      temp <- temp[grepl("_column", temp)]
+      switch(labels.included,
+             yes = {
+                 pattern <- "_column\\(([0-9]+)\\)\\s+([a-z0-9]+)\\s+(.*)\\s+%([0-9]+)[a-z]\\s+(.*)"
+                 classes <- c("numeric", "character", "character", "numeric", "character")
+                 N <- 5
+                 NAMES <- c("StartPos", "Str", "ColName", "ColWidth", "ColLabel")
+             },
+             no = {
+                 pattern <- "_column\\(([0-9]+)\\)\\s+([a-z0-9]+)\\s+(.*)\\s+%([0-9]+).*"
+                 classes <- c("numeric", "character", "character", "numeric")
+                 N <- 4
+                 NAMES <- c("StartPos", "Str", "ColName", "ColWidth")
+             })
+      temp_metadata <- setNames(lapply(1:N, function(x) {
+          out <- gsub(pattern, paste("\\", x, sep = ""), temp)
+          out <- gsub("^\\s+|\\s+$", "", out)
+          out <- gsub('\"', "", out, fixed = TRUE)
+          class(out) <- classes[x] ; out }), NAMES)
+      temp_metadata[["ColName"]] <- make.names(gsub("\\s", "", temp_metadata[["ColName"]]))
+      temp_metadata
+  }
+
+  read.dat <- function(dat, metadata_var, labels.included = "yes") {
+      read.table(dat, col.names = metadata_var[["ColName"]])
+  }
+
+
+GSS_metadata <- read.dct("~/github/w203/Labs/lab-2/result/GSS.dct")
+GSS_ascii <- read.dat("~/github/w203/Labs/lab-2/result/GSS.dat", GSS_metadata)
+attr(GSS_ascii, "col.label") <- GSS_metadata[["ColLabel"]]
+GSS <- GSS_ascii
+GSS
+```
+
+# EDA of GSS dataset
+
+```{r subsetting data for year 2022, include = FALSE}
+df <- GSS %>%
+  filter(YEAR == 2022) %>% 
+  select(YEAR, AGE, WRKSTAT, CONRINC, 
+         EDUC, HRS1, DEGREE, SEX, RACE)
+df
+```
+
+```{r}
+age_hist <- df %>%
+  filter(AGE > 0) %>% 
+  select(AGE) %>% 
+  ggplot(aes(x = AGE)) +
+  geom_histogram(binwidth = 2, fill = 'darkseagreen', color = 'black') +
+  labs(
+    x= 'Age', 
+    y = 'Counts',
+    title = 'Approx. Normally Distributed AGE of Respondents') + 
+  theme_minimal()
+
+age_hist
+```
+
+### Invalid Response values
+
+-   -100 = i: inapplicable
+-   -99 = n: no answer
+-   -98 = d: did not answer
+-   -97 = s: skipped on web
+-   -90 = r: refused
+
+### CONRINC invalid response count
+
+```{r amount of invalid responses in Y variable, echo=TRUE}
+df %>%
+  filter(CONRINC < 0) %>% 
+  group_by(CONRINC) %>% 
+  summarise(count = n())
+```
+
+### HRS1 invalid response count
+
+```{r amount of invalid responses in X covariate HRS1, echo=TRUE}
+
+df %>%
+  filter(HRS1 < 0) %>%
+  group_by(HRS1) %>% 
+  summarise(count = n())
+  
+
+```
+
+```{r}
+df %>% 
+  filter(AGE < 0) %>% 
+  group_by(AGE )%>% 
+  summarise(count = n())
+```
+
+```{r count of male / female in data set}
+#-  1: male
+#-  2: female
+
+df %>%
+  filter(SEX %in% c(1,2)) %>% 
+  group_by(SEX ) %>% 
+  summarise(count = n())
+```
+
+```{r count of race}
+# Race
+#-   1: white
+#-   2: black
+#-   3: other
+
+df %>%
+  filter(RACE %in% c(1, 2, 3)) %>% 
+  group_by(RACE) %>% 
+  summarise(count = n()) 
+```
+
+### dummy variable tranformation
+
+```{r dummy variables for invalid responses in conrinc}
+df <- df %>% 
+  mutate(conrinc_inapplicable = if_else(CONRINC == -100, 1, 0)) %>% 
+  mutate(hrs1_inapplicable = if_else(HRS1 == -100, 1,0),
+         hrs1_no_answer = if_else(HRS1 == -99, 1, 0),
+         hrs1_did_not_answer = if_else(HRS1 == -98, 1, 0),
+         hrs1_skipped_on_web = if_else(HRS1 == -97, 1, 0)) %>% 
+  mutate(wrkstat_no_answer = if_else(WRKSTAT == -99, 1,0),
+         wrkstat_did_not_answer = if_else(WRKSTAT == -98, 1,0),
+         wrkstat_skipped_on_web = if_else(WRKSTAT == -97, 1,0))
+  
+```
+
+```{r catorgizing age by generation, and degree by completion}
+
+df <- df %>% 
+  mutate(Generation = case_when( 
+    AGE > 11 & AGE <= 27 ~ "Gen Z",
+    AGE > 27 & AGE <= 43 ~ "Millennials",
+    AGE >= 44 & AGE <= 59 ~ "Gen X",
+    AGE > 59 & AGE <=78 ~ "Baby Boomers",
+    AGE > 78 ~ "Silent Generation"
+  )) %>% 
+  mutate(DEGREE = case_when(
+    DEGREE == 0 ~ "less than HS",
+    DEGREE == 1 ~ "HS",
+    DEGREE == 2~ "Associate/junior college",
+    DEGREE == 3 ~ "Bachelor's",
+    DEGREE == 4 ~ "Graduate"
+  )) %>% 
+  mutate(WorkStat_cat = case_when(
+    WRKSTAT == 1 ~ "Working full time",
+    WRKSTAT == 2 ~ "Working part time",
+    WRKSTAT == 3 ~ "With a job, but not ar work because of temporary illness, vacation, strike",
+    WRKSTAT == 4 ~ "Unemployed, laid off, looking for work",
+    WRKSTAT == 5 ~ "Retired",
+    WRKSTAT == 6 ~ "In school",
+    WRKSTAT == 7 ~ "Keeping house",
+    WRKSTAT == 8 ~ "Other"
+  )) 
+
+```
+
+```{r tranforming DEGREE to catagorical and setting "less than HS" as base case}
+df$DEGREE <- factor(df$DEGREE, levels = c("less than HS","HS", "Associate/junior college", "Bachelor's", "Graduate"))
+df$Generation <- factor(df$Generation, levels = c('Silent Generation', 'Baby Boomers', 'Millennials', 'Gen X', 'Gen Z'))
+
+```
+
+### NA tranformation
+
+```{r new filtered df with tranformed invalid responses to nulls, include=FALSE}
+df_filtered <- df %>%
+  mutate(HRS1 = replace(HRS1, HRS1 %in% c(-100, -99, -98, -97, -90), NA),
+         WRKSTAT = replace(DEGREE, DEGREE %in% c(-100, -99, -98, -97, -90), NA),
+         CONRINC = replace(CONRINC, CONRINC %in% c(-100, -99, -98, -97, -90), NA),
+         AGE = replace(AGE, AGE %in% c(-100, -99, -98, -97, -90), NA))
+df_filtered
+```
+
+```{r natural log tranformation of income for large variance}
+df_filtered <- df_filtered %>% 
+  mutate(log_e_income = log(CONRINC))
+
+```
+
+### removing NAs
+
+```{r removing NA, include=FALSE}
+df_filtered <- df_filtered %>% 
+  filter(!is.na(AGE) 
+         & !is.na(HRS1) 
+         & !is.na(DEGREE) 
+         & !is.na(log_e_income))
+df_filtered
+```
+
+## scatter plot of log income
+
+```{r}
+df_filtered %>% 
+  ggplot()+
+  aes(x = AGE, y = log_e_income,alpha = .5) + 
+  geom_point()+
+  geom_smooth(se = FALSE) +
+  labs( 
+    x = 'Age of respondents',
+    y = 'Income', 
+    title = 'Non-linear relationship between age and income')
+```
+
+```{r}
+df_filtered %>% 
+  ggplot()+
+  aes(x = AGE, y = log_e_income,alpha = 0.5, color = DEGREE) + 
+  geom_point()+
+  geom_smooth(se = FALSE) +
+  labs( 
+    x = 'Age of respondents',
+    y = 'Income', 
+    title = 'Higher level of education results in higher log income')
+```
+
+```{r}
+income_hist <- df_filtered %>%
+  filter(CONRINC >= 0) %>% 
+  select(CONRINC) %>% 
+  ggplot(aes(x = CONRINC)) +
+  geom_histogram(  binwidth = 10000, boundary = 3000,fill = 'skyblue1', color = 'black') +
+  labs(x= "Income", y = 'Counts') +
+  ggtitle("Income distribution of Respondents") +
+  theme_minimal()
+  
+log_income_hist <- df_filtered %>%
+  select(log_e_income) %>% 
+  ggplot(aes(x = log_e_income)) +
+  geom_histogram( binwidth = .3, boundary = .5,fill = 'skyblue1', color = 'black') +
+  labs(x= "Log Income", y = 'Counts') +
+  ggtitle("Log scaled Income distribution of Respondents") +
+  scale_x_continuous( breaks = 0:12) +
+  theme_minimal()
+
+income_hist / log_income_hist
+ggsave("income_plot.png", plot = income_hist / log_income_hist, width = 7, height = 5, dpi = 300)
+```
+
+# Statistical test
+
+### Variables
+
+-   Y: 2022 income
+
+-   X:age
+
+-   covariates (x):
+
+    -   Degree: education level completion
+
+    -   HRS1: hours worked per week
+
+    -   Generation
+
+```{r test if invalid responses affect model , echo=TRUE}
+model_without_dummy = lm(CONRINC~ AGE, data = df)
+
+model_with_dummy<- lm(CONRINC ~ AGE + conrinc_inapplicable, data = df)
+
+coeftest(model_without_dummy, vcov = vcovHC(model_without_dummy))
+coeftest(model_with_dummy, vcov=vcovHC(model_with_dummy))
+```
+
+```{r base model, echo=TRUE}
+model1 <- lm(log_e_income ~ AGE, data = df_filtered)
+coeftest(model1, vcov = vcovHC(model1, type = 'HC0'))
+```
+
+```{r model with added coefficients, echo=TRUE}
+model2 = lm(log_e_income ~ AGE + HRS1, data = df_filtered)
+coeftest(model2, vcov = vcovHC(model2,  type = 'HC0'))
+```
+
+```{r f test checking , echo=TRUE}
+anova(model1, model2)
+```
+
+```{r}
+model3 = lm(log_e_income ~ AGE + HRS1 + DEGREE, data = df_filtered)
+coeftest(model3, vcov = vcovHC(model3, type = 'HC0'))
+anova(model2, model3)
+```
+
+```{r full model with robust standard error coeftest, echo=TRUE}
+model4 = lm(log_e_income ~ Generation + HRS1 + DEGREE, data = df_filtered)
+coeftest(model4, vcov = vcovHC(model4, type = 'HC0'))
+anova(model3, model4)
+```
+
+```{r}
+vif(model4)
+
+```
+
+```{r include=FALSE}
+se.model1 = coeftest(model1, vcov = vcovHC)[ , "Std. Error"]
+se.model2 = coeftest(model2, vcov = vcovHC)[ , "Std. Error"]
+se.model3 = coeftest(model3, vcov = vcovHC)[ , "Std. Error"]
+se.model4 = coeftest(model4, vcov = vcovHC)[ , "Std. Error"]
+```
+
+## Stargazer table
+
+```{r results='asis', echo=TRUE}
+stargazer(model1, model2, model3,model4, type = "text", omit.stat = "f", model.numbers = TRUE,
+          se = list(se.model1, se.model2,se.model3, se.model4),
+          covariate.labels = c('Age', 'Baby Boomers', 'Millennials', 'Gen X', 'Gen Z', 'Hours Worked',
+                               'HS','Associate/Jr college', "Bachelor's", 'Graduate'),
+          star.cutoffs = c(0.05, 0.01, 0.001), title = "Table 1: The relationship between natural log income and age")
+
+```
