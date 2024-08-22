@@ -32,7 +32,7 @@ Databases: SQL, NoSQL, Neo4j\
 Machine learning libraries: Scikit-learn, TensorFlow, Keras, PyTorch\
 Machine learning Algorithms: Classification, Regression, K-Means Clustering, NLP, Deep Learning\
 Data visualization: Matplotlib, Seaborn, ggplot2\
-Big data tools: AWS, Docker
+Big data tools: AWS, Docker\
 Developer tools: Jupyter, VSCode, Git, LinuxCLI
 
 ## Projects
