@@ -26,9 +26,9 @@ Additional resources or documentation specific to the project
 ## Technologies Used
 The projects in this portfolio primarily use the following technologies:
 
-Python\
+Python, R, SQL \
 Jupyter Notebooks Data analysis libraries: Pandas, NumPy\
-Databases: SQL, NoSQL, Neo4j\
+Databases: NoSQL, Neo4j\
 Machine learning libraries: Scikit-learn, TensorFlow, Keras, PyTorch\
 Machine learning Algorithms: Classification, Regression, K-Means Clustering, NLP, Deep Learning\
 Data visualization: Matplotlib, Seaborn, ggplot2\
