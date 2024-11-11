@@ -38,6 +38,8 @@ Developer tools: Jupyter, VSCode, Git, LinuxCLI
 ## Projects
 (This section will be updated with brief descriptions of each project as they are added to the repository.)
 
+##### [Final Wriiten Reports](https://github.com/sacayo/Data-Science-Projects/tree/main/Final-Written-Reports)
+In this directory, you will find all the written reports for some of the projects.
 
 ##### [Google Store Customer Return Prediction](https://github.com/sacayo/Data-Science-Projects/tree/main/Google-Customer-Return-Prediction)
 The primary goal of this project was to develop a machine learning model capable of predicting user retention for Google's online merchandise store. The final LSTM model achieved an 93.72% recall rate on the test set, significantly outperforming the baseline Logistic Regression model. 
