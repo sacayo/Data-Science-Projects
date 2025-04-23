@@ -41,6 +41,12 @@ Developer tools: Jupyter, VSCode, Git, LinuxCLI
 ##### [Final Wriiten Reports](https://github.com/sacayo/Data-Science-Projects/tree/main/Final-Written-Reports)
 In this directory, you will find all the written reports for some of the projects.
 
+##### [Flight Delay Prediction with PySpark](https://github.com/sacayo/Data-Science-Projects/tree/main/Flight-Delay-Prediction)
+Using data from Bureau of Transportation Statistics, experimented with classification models(Logistic Regression, XGBoost, NN) to predict flight delays with a estimated bussiness outcome of $20 million in cost savings for Southwest Airlines. 
+
+##### [Naive RAG System Evlaution with RAGAS](https://github.com/sacayo/Data-Science-Projects/tree/main/RAG-System-Evaluation)
+Designed a LLM system evalution for Retrieval Augmented Generation pipelines using the RAGAS framework. Tuned various hyperparameters(chunking strategies, embedding models, LLM models) to increase quality of reponse generation.
+
 ##### [Google Store Customer Return Prediction](https://github.com/sacayo/Data-Science-Projects/tree/main/Google-Customer-Return-Prediction)
 The primary goal of this project was to develop a machine learning model capable of predicting user retention for Google's online merchandise store. The final LSTM model achieved an 93.72% recall rate on the test set, significantly outperforming the baseline Logistic Regression model. 
 
