@@ -41,7 +41,7 @@ Developer tools: Jupyter, VSCode, Git, LinuxCLI
 ##### [Final Wriiten Reports](https://github.com/sacayo/Data-Science-Projects/tree/main/Final-Written-Reports)
 In this directory, you will find all the written reports for some of the projects.
 
-##### [Flight Delay Prediction with PySpark](https://github.com/sacayo/Data-Science-Projects/tree/main/Flight-Delay-Prediction)
+##### [Flight Delay Prediction with Databrick's PySpark](https://github.com/sacayo/Data-Science-Projects/tree/main/Flight-Delay-Prediction)
 Using data from Bureau of Transportation Statistics, experimented with classification models(Logistic Regression, XGBoost, NN) to predict flight delays with a estimated bussiness outcome of $20 million in cost savings for Southwest Airlines. 
 
 ##### [Naive RAG System Evlaution with RAGAS](https://github.com/sacayo/Data-Science-Projects/tree/main/RAG-System-Evaluation)
