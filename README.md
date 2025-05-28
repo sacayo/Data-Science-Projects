@@ -1,5 +1,23 @@
+# Sammy Cayo
+sacayo@berkeley.edu
+
 # Data Science Portfolio
 Welcome to my Data Science Portfolio repository! This collection showcases a variety of data science projects I've completed, demonstrating my skills in machine learning, data analysis, and problem-solving across different domains.
+
+Masters in Data Science (in progress - expected Fall 2025)
+
+Univeristy of California, Berkeley
+
+Coursework Completed:
+
+W200: Data Science Programming with Python
+W201: Research Design and Applications for Data and Analysis
+W203: Statistics for Data Science
+W205: Fundamentals of Data Engineering
+W207: Applied Machine Learning
+W241: Experiments and Causal Inference
+W261: Machine Learning at Scale
+W267: Generative AI
 
 ## Introduction
 In this repository, you'll find a diverse range of data science projects that I've worked on. Each project demonstrates different aspects of the data science workflow, from data preprocessing and exploratory data analysis to model development and evaluation. These projects reflect my journey in applying data science techniques to real-world problems and datasets.
@@ -27,10 +45,10 @@ Additional resources or documentation specific to the project
 The projects in this portfolio primarily use the following technologies:
 
 Python, R, SQL \
-Jupyter Notebooks Data analysis libraries: Pandas, NumPy\
-Databases: NoSQL, Neo4j\
-Machine learning libraries: Scikit-learn, TensorFlow, Keras, PyTorch\
-Machine learning Algorithms: Classification, Regression, K-Means Clustering, NLP, Deep Learning\
+Jupyter Notebooks Data analysis libraries: Pandas, NumPy, PySpark\
+Databases: NoSQL, Neo4j, GraphFrame\
+Machine learning libraries: Scikit-learn, TensorFlow, Keras, PyTorch, LangChain, RAGAS, SparkDataFrame \
+Machine learning Algorithms: Classification, Regression, K-Means Clustering, NLP, Deep Learning, LLMs, Generative AI\
 Data visualization: Matplotlib, Seaborn, ggplot2\
 Big data tools: AWS, Docker\
 Developer tools: Jupyter, VSCode, Git, LinuxCLI
