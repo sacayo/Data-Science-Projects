@@ -1,22 +1,21 @@
-# Sammy Cayo
-sacayo@berkeley.edu
 
 # Data Science Portfolio
 Welcome to my Data Science Portfolio repository! This collection showcases a variety of data science projects I've completed, demonstrating my skills in machine learning, data analysis, and problem-solving across different domains.
 
+## Sammy Cayo
 Masters in Data Science (in progress - expected Fall 2025)
 
 Univeristy of California, Berkeley
 
 Coursework Completed:
 
-W200: Data Science Programming with Python
-W201: Research Design and Applications for Data and Analysis
-W203: Statistics for Data Science
-W205: Fundamentals of Data Engineering
-W207: Applied Machine Learning
-W241: Experiments and Causal Inference
-W261: Machine Learning at Scale
+W200: Data Science Programming with Python\
+W201: Research Design and Applications for Data and Analysis\
+W203: Statistics for Data Science\
+W205: Fundamentals of Data Engineering\
+W207: Applied Machine Learning\
+W241: Experiments and Causal Inference\
+W261: Machine Learning at Scale\
 W267: Generative AI
 
 ## Introduction
@@ -81,9 +80,6 @@ This project examines the interrelation of age and income among different genera
 
 ##### [Spotify Hit Song Predictor](https://github.com/sacayo/Data-Science-Projects/tree/main/Spotify-Hit-Song-Predictor)
 This project analyzes over 32,000 Spotify tracks to uncover the factors influencing song popularity across different genres and time periods. Using various machine learning techniques, including Random Forest Regression, we explored musical attributes, genre trends, and their impact on track popularity.
-
-
-[More projects to be added]
 
 
 ## Contact Information
