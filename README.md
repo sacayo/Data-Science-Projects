@@ -55,10 +55,7 @@ Big data tools: AWS, Docker\
 Developer tools: Jupyter, VSCode, Git, LinuxCLI
 
 ## Projects
-(This section will be updated with brief descriptions of each project as they are added to the repository.)
 
-##### [Final Wriiten Reports](https://github.com/sacayo/Data-Science-Projects/tree/main/Final-Written-Reports)
-In this directory, you will find all the written reports for some of the projects.
 
 ##### [Full-Stack Generative AI Application Deployed on AWS](https://github.com/sacayo/Data-Science-Projects/tree/main/rag-pipeline)
 Built a production-ready, end-to-end RAG system over 7.6GB of web-scraped legal ordinances from 421 counties across four states, enabling centralized, cross-jurisdictional research with hybrid semantic and keyword search. The full-stack GenAI application was deployed using AWS services with a Flask backend, Llama 3.1 inference, and scalable ingestion pipelines, and was developed in close collaboration with UC Berkeley’s Responsibility Lab as the primary stakeholder.
@@ -84,6 +81,8 @@ This project examines the interrelation of age and income among different genera
 ##### [Spotify Hit Song Predictor](https://github.com/sacayo/Data-Science-Projects/tree/main/Spotify-Hit-Song-Predictor)
 This project analyzes over 32,000 Spotify tracks to uncover the factors influencing song popularity across different genres and time periods. Using various machine learning techniques, including Random Forest Regression, we explored musical attributes, genre trends, and their impact on track popularity.
 
+##### [Final Wriiten Reports](https://github.com/sacayo/Data-Science-Projects/tree/main/Final-Written-Reports)
+In this directory, you will find all the written reports for some of the projects tailored to executive stakeholders/decision-makers.
 
 ## Contact Information
 Feel free to reach out to me if you have any questions about the projects or would like to discuss data science and machine learning!
