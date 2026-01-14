@@ -42,7 +42,7 @@ Automated web scraper for downloading county ordinance PDFs from Municode Librar
 - Google Drive integration for storing downloaded PDFs
 - Robust error handling with failed URL tracking
 
-**Deployment:** Google Colab (free tier compatible)
+**Deployment:** Google Colab 
 
 **Output:** PDFs saved to Google Drive → Upload to S3 (`s3://bucket/input/pdfs/`) → Feeds into Pipeline 1
 
@@ -466,24 +466,6 @@ UNBARRED_API_KEY=  # Optional - leave empty
 
 📖 **Detailed deployment guides available in each component's README**
 
----
-
-## Performance & Costs
-
-### Expected Performance
-- **Data Engineering:** ~100 pages/minute (OCR), ~500 pages/minute (text PDFs)
-- **Embedding:** ~1000 chunks/minute
-- **Query API:** ~2-5 seconds per query (hybrid mode)
-- **Streamlit App:** < 100ms UI response time (API latency dependent)
-
-### AWS Costs (Estimated Monthly)
-- **ECS Task (data-engineering):** ~$50-100/month (depends on usage)
-- **S3 Storage:** ~$23/TB/month
-- **EC2 g4dn.xlarge (24/7):** ~$380/month
-- **Elastic Beanstalk (single-instance):** ~$15-30/month (t3.small or similar)
-- **Pinecone Serverless:** Varies by usage (see Pinecone pricing)
-
-💡 **Tip:** Stop EC2 instance when not in use to reduce costs
 
 ---
 
@@ -549,11 +531,7 @@ python -m pytest tests/  # (if tests exist)
 4. Add tests
 5. Submit a pull request
 
----
 
-## License
-
-[Add your license here]
 
 ---
 
