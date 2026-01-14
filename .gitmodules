@@ -1,0 +1,3 @@
+[submodule "rag-pipeline"]
+	path = rag-pipeline
+	url = https://github.com/kevinyi901/rag-pipeline.git
