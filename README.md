@@ -64,7 +64,7 @@ Built a production-ready, end-to-end RAG system over 7.6GB of web-scraped legal 
 Using data from Bureau of Transportation Statistics, we experimented with classification models(Logistic Regression, XGBoost, NN) to predict flight delays with a estimated bussiness outcome of $20 million in cost savings for Southwest Airlines. We leveraged Databricks to engineer an streaming ML pipeline for a dataset of 90+ million rows. Using carefully defined features, we were able to predict delays with a 75% F2-score.
 
 ##### [RAG QA System Evlaution with RAGAS](https://github.com/sacayo/Data-Science-Projects/tree/main/RAG-System-Evaluation)
-Designed a LLM system evalution for Retrieval Augmented Generation pipelines using the RAGAS framework. Tuned various hyperparameters(chunking strategies, embedding models, LLM models) to increase quality of response outputs against a set of 100 groundtruth question-answer pairs.
+Designed a LLM system evalution for Retrieval Augmented Generation pipelines using the RAGAS framework. Tuned various hyperparameters(chunking strategies, embedding models, LLM models) to increase quality of response outputs against a set of 100 groundtruth question-answer pairs & test-set questions.
 
 ##### [Google Store Customer Return Prediction](https://github.com/sacayo/Data-Science-Projects/tree/main/Google-Customer-Return-Prediction)
 The primary goal of this project was to develop a machine learning model capable of predicting user retention for Google's online merchandise store. The final LSTM model achieved an 93.72% recall rate on the test set, significantly outperforming the baseline Logistic Regression model. 
