@@ -2,7 +2,6 @@
 
 > A systematic evaluation framework for Retrieval-Augmented Generation systems — testing 12 configurations across embedding models, LLMs, chunking strategies, and audience types to find the optimal RAG pipeline.
 
-## Collaborators
 
 Built as a project for UC Berkeley MIDS DATASCI 290 (Generative AI).
 
