@@ -11,13 +11,13 @@ Built as a project for UC Berkeley MIDS DATASCI 290 (Generative AI).
 
 ### Context
 
-RAG systems have a dirty secret: they can look impressive in demos while quietly producing unreliable results. A chatbot that answers confidently but retrieves irrelevant context — or hallucinates details not present in the source documents — is worse than no system at all, because users trust it.
+RAG systems have a dirty secret: they can look impressive in demos while quietly producing unreliable results. A chatbot that answers confidently but retrieves irrelevant context(or hallucinates details not present in the source documents), is worse than no system at all, because users trust it.
 
 This project addresses a fundamental question in production RAG: **how do you know your retrieval pipeline is actually working?** And more importantly, how do you systematically compare different configurations to find the one that best serves your users?
 
 ### Challenge
 
-We were tasked with building and evaluating a RAG system for a tech company with two distinct user groups:
+I was tasked with building and evaluating a RAG system for a tech company with two distinct user groups:
 - **300 engineers** who need detailed, technical answers about LLMs, RAG architectures, RLHF, and model training
 - **40 marketing staff** who need clear, concise explanations of the same topics for customer-facing materials
 
@@ -81,7 +81,7 @@ The core insight: there's no single "best" RAG configuration. The optimal setup 
 
 ### A/B Testing Matrix
 
-We tested 12 distinct configurations across 5 tunable dimensions:
+I tested 12 distinct configurations across 5 tunable dimensions:
 
 ```
                     ┌─────────────────────────────────────────────┐
@@ -114,7 +114,7 @@ We tested 12 distinct configurations across 5 tunable dimensions:
 
 ### Evaluation Metrics
 
-We used a three-metric weighted scoring system to evaluate each configuration:
+For this project, i used a three-metric weighted scoring system to evaluate each configuration:
 
 | Metric | Weight | What It Measures |
 |--------|--------|-----------------|
