@@ -4,7 +4,7 @@
 
 ## Collaborators
 
-Built as the capstone project for UC Berkeley MIDS program.
+Built as the capstone project for UC Berkeley MIDS program with Kevin Yi, Roz Huang, Arthur Kang, and Armaan Hiranandani.
 
 ---
 
