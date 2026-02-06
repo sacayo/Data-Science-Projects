@@ -124,7 +124,7 @@ For this project, i used a three-metric weighted scoring system to evaluate each
 
 **Combined Score** = `0.4 × SemanticSimilarity + 0.4 × BERTScore + 0.2 × ROUGE-L`
 
-We weighted ROUGE-L lower because surface-level word overlap is a weaker signal for answer quality than semantic alignment. Two answers can convey the same meaning with different wording — semantic similarity and BERTScore capture this, ROUGE doesn't.
+I weighted ROUGE-L lower because surface-level word overlap is a weaker signal for answer quality than semantic alignment. Two answers can convey the same meaning with different wording — semantic similarity and BERTScore capture this, ROUGE doesn't.
 
 ### Chunking Strategy Comparison
 
@@ -228,11 +228,11 @@ Testing Mistral 7B (local, controllable, no API costs) against Cohere (cloud, po
 
 ## Lessons Learned
 
-**Chunking strategy has outsized impact.** We expected the LLM choice to dominate results. Instead, how you chunk documents matters more than which model generates the answer. Fixed-size chunking at 128 tokens frequently splits a concept across two chunks, meaning the retriever finds half the answer. Semantic chunking keeps concepts together.
+**Chunking strategy has outsized impact.** I expected the LLM choice to dominate results. Instead, how you chunk documents matters more than which model generates the answer. Fixed-size chunking at 128 tokens frequently splits a concept across two chunks, meaning the retriever finds half the answer. Semantic chunking keeps concepts together.
 
 **Evaluation is harder than building.** Building a RAG chain takes hours. Building a reliable evaluation framework that measures what you actually care about takes weeks. Defining the gold dataset, choosing metrics, weighting them appropriately, and running experiments across 12 configurations was the majority of the project's effort.
 
-**Temperature tuning had surprisingly little effect.** We expected significant quality differences across temperature settings (0.1, 0.7, 1.0). In practice, with good prompts, the temperature had minimal impact on answer quality for factual questions. This suggests that prompt engineering dominates temperature for retrieval-grounded generation.
+**Temperature tuning had surprisingly little effect.** I expected significant quality differences across temperature settings (0.1, 0.7, 1.0). In practice, with good prompts, the temperature had minimal impact on answer quality for factual questions. This suggests that prompt engineering dominates temperature for retrieval-grounded generation.
 
 **Out-of-context handling is a feature, not a bug.** When the system correctly says "I don't have information about this topic" instead of hallucinating, that's a success. Our best configurations correctly identified out-of-scope questions (e.g., literary questions asked to a GenAI knowledge base) with >90% accuracy.
 
